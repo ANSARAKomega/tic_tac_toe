@@ -33,14 +33,22 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Text(
                 "Created By",
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 24),
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 40,
+                  color: Colors.white,
+                ),
               ),
               SizedBox(height: 10),
               Image.asset("assets/images/Logo.png", width: 300, height: 300),
               SizedBox(height: 10),
               Text(
                 "Himself",
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 24),
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 40,
+                  color: Colors.white,
+                ),
               ),
             ],
           ),

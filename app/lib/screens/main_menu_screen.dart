@@ -25,10 +25,20 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
         ),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
 
             children: [
+              SizedBox(height: 120),
+              Text(
+                "Tic\nTac\nToe",
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 64,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(height: 150),
               InkWell(
                 onTap: () {
                   Navigator.push(
@@ -62,7 +72,9 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                     builder: (BuildContext context) {
                       return AlertDialog(
                         title: const Text("Exit"),
-                        content: const Text("Are you sure you want to exit the game?"),
+                        content: const Text(
+                          "Are you sure that you want to exit the game?",
+                        ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -73,15 +85,14 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              SystemNavigator.pop();                            },
+                              SystemNavigator.pop();
+                            },
                             child: const Text("Yes"),
                           ),
                         ],
                       );
                     },
                   );
-
-
                 },
                 child: Container(
                   height: height * 0.05,
@@ -108,5 +119,3 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
     );
   }
 }
-
-
