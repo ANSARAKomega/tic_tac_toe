@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'game_screen.dart';
 
@@ -57,10 +57,31 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
               SizedBox(height: 50),
               InkWell(
                 onTap: () {
-                  // Navigator.pushReplacement(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => Loginscreen()),
-                  // );
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text("Exit"),
+                        content: const Text("Are you sure you want to exit the game?"),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: const Text("No"),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              SystemNavigator.pop();                            },
+                            child: const Text("Yes"),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+
+
                 },
                 child: Container(
                   height: height * 0.05,
@@ -87,3 +108,5 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
     );
   }
 }
+
+
